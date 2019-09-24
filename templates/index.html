@@ -1,0 +1,75 @@
+{% extends "base.html"%}
+
+{% block display %}
+
+<style>
+    label { 
+        color:darkcyan;
+        font-size:135%;
+    }
+    .error{ 
+        color: red;
+    }
+    html { background-color:plum; }
+    h1 { color:indigo; }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .button{
+        display:block;
+        margin: 7px auto;
+    }
+
+</style>
+
+<div>
+    <form form action ="/", method='POST'>
+
+        <table class="signup">
+            <tr>
+                <td>
+                    <label>Username</label>
+                </td>
+                    <td>
+                        <input name="username" type="text" value={{username}}>
+                        <span class="error">{{username_error}}</span>
+                    </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Password</label>
+                </td>
+                    <td>
+                        <input name="password" type="password" value="" />
+                        <span class="error">{{password_error}}</span>
+                    </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Verify Password</label>
+                </td>
+                    <td>
+                        <input name="verify" type="password" value="" />       
+                        <span class="error">{{vpw_error}}</span>
+                    </td>
+            </tr> 
+
+            <tr>
+                <td>
+                    <label>Email (optional)</label>
+                </td>
+                    <td>
+                        <input name="email" type="text" value={{email}}>
+                        <span class="error"> {{email_error}}</span>
+                    <td>
+            </tr> 
+            </table>
+        <div>
+        <input class="button" type="submit", value="Submit" />            
+        </div>  
+    </form>
+</div>
+{% endblock %}
